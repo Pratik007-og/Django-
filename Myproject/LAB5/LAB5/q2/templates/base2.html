@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee App</title>
+</head>
+<body>
+    <h1>Employee App</h1>
+    <div id="container">
+        <form id="student-form">
+            <label for="employees">Employee ID</label>
+            <select name="employees" id="employees">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            <label for="doj">Date of joining:</label>
+            <input type="date" id="doj" />
+            <button id="submit-btn" type="submit">
+                Am I Eligibile for Promotion?
+            </button>
+        </form>
+        <div id="results"></div>
+    </div>
+    <script>
+      document
+        .getElementById("submit-btn")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+          results();
+        });
+      function results() {
+        console.log("lmao");
+        const resultDiv = document.getElementById("results");
+        while (resultDiv.firstChild) {
+          resultDiv.removeChild(resultDiv.lastChild);
+        }
+
+        let id = document.getElementById("employees").value;
+        let doj = new Date(document.getElementById("doj").value);
+
+        let yearsDiff = new Date().getFullYear() - doj.getFullYear();
+
+        if (yearsDiff >= 5) {
+          document.getElementById("submit-btn").innerHTML = "YES";
+        } else {
+          document.getElementById("submit-btn").innerHTML = "NO";
+        }
+      }
+    </script>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #results {
+            flex: 1;
+            flex-grow: 1;
+        }
+
+        form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin-right: 16px;
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 8px;
+            margin-bottom: 16px;
+        }
+
+        label {
+            margin-bottom: 4px;
+        }
+    </style>
+</body>
+</html>

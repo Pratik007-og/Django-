@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Question1</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function myfunc() {
+            var firstname = document.getElementById("firstname").value;
+            var lastname = getElementById("lastname");
+            var course = document.getElementById("course").value;
+            var gender = document.querySelector('input[name = "gender"]:checked');
+            var address = document.getElementById("address").value;
+            var contact = document.getElementById("phone_no").value;
+            var email = document.getElementById("email").value;
+            var chem = document.getElementById("chem").value;
+            var bio = document.getElementById("bio").value;
+            var maths = document.getElementById("maths").value;
+            var sum = parseInt(chem) + parseInt(bio) + parseInt(maths);
+            var avg = sum / 3;
+            document.getElementById("result").innerHTML = "\nName: " + firstname + " " + lastname + "\nAddress: " + address + "\nContact Number: " + contact + "\nEmail: " + email + "\nPercentage: " + avg;
+        }
+    </script>
+
+    <form id="form">
+
+        <label> Firstname </label>
+        <input type="text" id="firstname" size="15" /> <br> <br>
+        <label>Lastname</label>
+        <input type="text" id="lastname" size="15" /> <br> <br>
+
+        <label>
+            Course :
+        </label>
+        <select id="course">
+            <option value="Course">Course</option>
+            <option value="BBA">BBA</option>
+            <option value="B.Tech">B.Tech</option>
+            <option value="MBA">MBA</option>
+            <option value="M.Tech">M.Tech</option>
+        </select>
+
+        <br>
+        <br>
+        <label>
+            Gender :
+        </label><br>
+        <input type="radio" name="gender" value="male" /> Male <br>
+        <input type="radio" name="gender" value="female" /> Female <br>
+        <input type="radio" name="gender" value="other" /> Other
+        <br>
+        <br>
+
+        <label>
+            Phone :
+        </label>
+        <input type="text" name="country code" value="+91" size="2" />
+        <input type="text" name="phone" id="phone_no" size="10" /> <br> <br>
+        Address
+        <br>
+        <textarea cols="80" rows="5" id="address"></textarea>
+        <br> <br>
+        Email:
+        <input type="email" id="email" name="email" /> <br>
+        <br> <br>
+        <label>
+           <b>MARKS</b><br />
+        </label>
+        <label>Chem</label>
+        <input type="text" id="chem" /><br /><br />
+        <label>Biology</label>
+        <input type="text" id="bio" /><br /><br />
+        <label>Maths</label>
+        <input type="text" id="maths" /><br /><br />
+        <button id="submit" onclick="myfunc()">Submit</button><br><br>
+        <textarea id="result" rows="10" cols="100"></textarea><br /><br />
+
+    </form>
+</body>
+</html>

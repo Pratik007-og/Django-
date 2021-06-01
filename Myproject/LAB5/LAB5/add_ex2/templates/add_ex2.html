@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+    <title>Additional 2</title>
+    <meta charset="utf-8" />
+    <style>
+        .column{
+            float:left;
+            width:50%;
+            display:inline-block
+        }
+        .row{
+            content:"";
+            display:table;
+            clear:both;
+        }
+        a{
+            color:lightblue;
+        }
+        div{
+            text-align:center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="column" style="background-color:grey;height:305.5px;">
+            <h5>Select Background Colour of Cover Page:</h5>
+            <select id="colors">
+                <option id="red">Red</option>
+                <option id="blue">Blue</option>
+                <option id="green">Green</option>
+                <option id="yellow">Yellow</option>
+                <option id="black">Black</option>
+                <option id="white">White</option>
+            </select><br /><br />
+            <button id="btn" onclick="myfunc()">Change Colours</button>
+        </div>
+        <div class="column" style="background-color:darkslategrey" id="cover">
+            <div style="text-align:center;color:white">
+                <h1>THE STORY of MY LIFE</h1><br /><br />
+                <h3>By : Pratik Patnaik</h3><br /><br />
+            </div>
+            <div style="text-align:center">
+                <a href="metadata">Metadata</a><br />
+                <a href="review">Reviews</a><br />
+                <a href="publisher">Publisher Info</a><br />
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function myfunc() {
+            var color = document.querySelector('#colors');
+            document.getElementById("cover").style.backgroundColor = color.value;
+        }
+    </script>
+</body>
+</html>
